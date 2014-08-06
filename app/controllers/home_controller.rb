@@ -1,8 +1,16 @@
 class HomeController < ApplicationController
   
+  include JenkinsClientPacker
+
   def index
-  	client = JenkinsApi::Client.new(:server_ip => "localhost", :username => "luizrobertofreitas", :password => "pomarola")
-  	@jobs = client.job.list_all_with_details
+	files = load_files_from_maven_dir()
+
+	@result = Array.new
+
+	files.each do |f|
+		md5 = Digest::MD5.file(f).hexdigest
+		@result.push(Hash.new(:file => f, :md5 => md5))
+	end
   end
 
 end

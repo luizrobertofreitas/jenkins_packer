@@ -1,0 +1,21 @@
+<%= form_for(@jenkins_app_config) do |f| %>
+  <% if @jenkins_app_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jenkins_app_config.errors.count, "error") %> prohibited this jenkins_app_config from being saved:</h2>
+
+      <ul>
+      <% @jenkins_app_config.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :directory %><br>
+    <%= f.text_field :directory %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

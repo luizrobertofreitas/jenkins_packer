@@ -1,7 +1,17 @@
-<h1>List of Jenkins jobs</h1>
-
-<ul>
-<% @jobs.each do |j| %>
-	<li><%= j.name %></li>
-<% end %>
-</ul>
+<h1>List of Files</h1>
+<table>
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>MD5</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @result.each do |r| %>
+		<tr>
+			<td><%= r[:file] %></td>
+			<td><%= r[:md5] %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
