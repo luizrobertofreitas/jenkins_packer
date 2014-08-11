@@ -5,5 +5,10 @@
   <%= @jenkins_app_config.directory %>
 </p>
 
+<p>
+  <strong>Builds Directory:</strong>
+  <%= @jenkins_app_config.builds_directory %>
+</p>
+
 <%= link_to 'Edit', edit_jenkins_app_config_path(@jenkins_app_config) %> |
 <%= link_to 'Back', jenkins_app_configs_path %>

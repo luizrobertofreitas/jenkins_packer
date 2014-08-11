@@ -4,11 +4,17 @@ module JenkinsClientPacker extend ActiveSupport::Concern
 		return JenkinsApi::Client.new(:server_ip => "localhost", :username => "luizrobertofreitas", :password => "pomarola")
 	end
 
-	def load_files_from_maven_dir()
+	def load_files_from_maven_dir
 
 		config = JenkinsAppConfig.first
 
 		return Dir[config.directory]
+	end
+
+	def load_builds_dir
+		config = JenkinsAppConfig.first
+
+		return config.builds_directory
 	end
 
 	## Get some operations on: https://github.com/arangamani/jenkins_api_client/blob/master/lib/jenkins_api_client/job.rb

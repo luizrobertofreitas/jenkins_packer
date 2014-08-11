@@ -1,17 +1,24 @@
 <h1>List of Files</h1>
-<table>
-	<thead>
-		<tr>
-			<th>File</th>
-			<th>MD5</th>
-		</tr>
-	</thead>
-	<tbody>
-	<% @result.each do |r| %>
-		<tr>
-			<td><%= r[:file] %></td>
-			<td><%= r[:md5] %></td>
-		</tr>
-	<% end %>
-	</tbody>
-</table>
+<%= form_tag(select_files_path, method: "post") do %>
+	<p>
+		<%= submit_tag("Gerar pacote") %>
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>File</th>
+				<th>MD5</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @result.each do |r| %>
+			<tr>
+				<td><input type="checkbox" name="file_check[<%= r[:md5] %>]" value="<%= r[:file] %>"></td>
+				<td><%= r[:file] %></td>
+				<td><%= r[:md5] %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

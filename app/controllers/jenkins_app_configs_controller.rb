@@ -70,5 +70,6 @@ class JenkinsAppConfigsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def jenkins_app_config_params
       params.require(:jenkins_app_config).permit(:directory)
+      params.require(:jenkins_app_config).permit(:builds_directory)
     end
 end

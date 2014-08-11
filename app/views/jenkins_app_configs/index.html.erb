@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Directory</th>
+      <th>Builds Directory</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
     <% @jenkins_app_configs.each do |jenkins_app_config| %>
       <tr>
         <td><%= jenkins_app_config.directory %></td>
+        <td><%= jenkins_app_config.builds_directory %></td>
         <td><%= link_to 'Show', jenkins_app_config %></td>
         <td><%= link_to 'Edit', edit_jenkins_app_config_path(jenkins_app_config) %></td>
         <td><%= link_to 'Destroy', jenkins_app_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,18 @@
+<h1>List of Selected Files for packaging</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>MD5</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @result.each do |r| %>
+		<tr>
+			<td><%= r[:file] %></td>
+			<td><%= r[:md5] %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
