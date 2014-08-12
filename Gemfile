@@ -26,8 +26,7 @@ gem 'spring',        group: :development
 
 gem 'mongoid'
 
-gem 'jenkins_api_client'
-gem 'rubyzip'
+gem 'rubyzip', :as => "zip"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

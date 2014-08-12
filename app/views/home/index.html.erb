@@ -1,5 +1,6 @@
 <h1>List of Files</h1>
 <%= form_tag(select_files_path, method: "post") do %>
+	
 	<p>
 		<%= submit_tag("Gerar pacote") %>
 	</p>
@@ -9,14 +10,16 @@
 				<th>#</th>
 				<th>File</th>
 				<th>MD5</th>
+				<th>SHA1</th>
 			</tr>
 		</thead>
 		<tbody>
 		<% @result.each do |r| %>
 			<tr>
 				<td><input type="checkbox" name="file_check[<%= r[:md5] %>]" value="<%= r[:file] %>"></td>
-				<td><%= r[:file] %></td>
+				<td><%= r[:hr_file] %></td>
 				<td><%= r[:md5] %></td>
+				<td><%= r[:sha1] %></td>
 			</tr>
 		<% end %>
 		</tbody>

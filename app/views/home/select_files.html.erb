@@ -1,17 +1,19 @@
-<h1>List of Selected Files for packaging</h1>
+<h1>List of Generated Packages</h1>
 
 <table>
 	<thead>
 		<tr>
 			<th>File</th>
 			<th>MD5</th>
+			<th>SHA1</th>
 		</tr>
 	</thead>
 	<tbody>
 	<% @result.each do |r| %>
 		<tr>
-			<td><%= r[:file] %></td>
+			<td><%= r[:hr_file] %></td>
 			<td><%= r[:md5] %></td>
+			<td><%= r[:sha1] %></td>
 		</tr>
 	<% end %>
 	</tbody>
